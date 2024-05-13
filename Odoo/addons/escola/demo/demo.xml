@@ -1,0 +1,251 @@
+<odoo>
+    <data>
+
+  <!-- Classe 1 demo -->
+
+  <!-- Demo professor 1 -->
+  <record id="user_professor1" model="res.users">
+
+            <field name="name">teacher</field>
+            <field name="login">professor</field>
+            <field name="password">12345aA</field>
+            <field name="groups_id" eval="[(6,0,[ref('base.group_user'), ref('escola.group_escola_profesor')])]"/>
+            <field name="image_1920" type="base64" file="base/static/img/user_demo-image.jpg"/>
+    </record>
+
+   <record id="employee_professor" model="hr.employee">
+          <field name="name">Marc Professor</field>
+          <field name="user_id" ref="user_professor1"/>
+          <field name="work_location_id"/>
+          <field name="work_phone">+3281813700</field>
+          <field name="work_email">gilles@odoo.com</field>
+          <field name="image_1920" type="base64" file="hr/static/img/employee_qdp-image.png"/>
+          <field name="is_teacher">1</field>
+      </record>
+      <!-- Demo classes 1-->
+          <record id="classe1" model="escola.class">
+            <field name="name">1r A</field>
+            <field name="grade">first</field>
+            <field name="date_begin">2020-07-01</field>
+            <field name="date_end">2021-09-01</field>
+            <field name="student_number">30</field>
+            <field name="description">1er A. Primera classe del primer curs</field>
+            <field name="tutor_id" ref="employee_professor"/>
+          </record>
+
+          <!-- Demo estudiants 1 -->
+          <record id="student1" model="escola.student">
+            <field name="name">Estudiant 1</field>
+            <field name="last_name">Estudiant 1</field>
+            <field name="id_number">123456789A</field>
+            <field name="birthdate">2000-12-04</field>
+            <field name="class_id" ref="classe1"/>
+          </record>
+
+          <record id="student2" model="escola.student">
+            <field name="name">Estudiant 2</field>
+            <field name="last_name">Estudiant 2</field>
+            <field name="id_number">123456789B</field>
+            <field name="birthdate">2000-07-02</field>
+            <field name="class_id" ref="classe1"/>
+          </record>
+
+          <record id="student3" model="escola.student">
+            <field name="name">Estudiant 3</field>
+            <field name="last_name">Estudiant 3</field>
+            <field name="id_number">123456789C</field>
+            <field name="birthdate">2000-02-12</field>
+            <field name="class_id" ref="classe1"/>
+          </record>
+
+          <record id="student4" model="escola.student">
+            <field name="name">Estudiant 4</field>
+            <field name="last_name">Estudiant 4</field>
+            <field name="id_number">123456789D</field>
+            <field name="birthdate">2000-01-03</field>
+            <field name="class_id" ref="classe1"/>
+          </record>
+
+<!-- demo esveniments 1-->
+          <record id="event1" model="escola.event">
+            <field name="type">absence</field>
+            <field name="class_id" ref="classe1"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor"/>
+            <field name="description">No han vigunt a classe i els hi han vist pel carrer</field>
+          </record>
+
+           <record id="event2" model="escola.event">
+            <field name="type">absence</field>
+            <field name="class_id" ref="classe1"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor"/>
+            <field name="description">No han vigunt a classe</field>
+          </record>
+
+ <record id="event3" model="escola.event">
+            <field name="type">delay</field>
+            <field name="class_id" ref="classe1"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor"/>
+            <field name="description">Ha arribat 20 minuts tard</field>
+          </record>
+
+           <record id="event4" model="escola.event">
+            <field name="type">felicitacio</field>
+            <field name="class_id" ref="classe1"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor"/>
+            <field name="description">Ha obtingut la millor nota de la escola</field>
+          </record>
+
+           <record id="event5" model="escola.event">
+            <field name="type">behavior</field>
+            <field name="class_id" ref="classe1"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor"/>
+            <field name="description">Ha insultat a tres companys de classe al migdia</field>
+          </record>
+
+
+ <!-- Classe 2 demo -->
+
+<!-- Demo professor 2-->
+  <!-- <record id="user_professor1" model="res.users">
+
+            <field name="name">teacher</field>
+            <field name="login">professor</field>
+            <field name="password">12345aA</field>
+            <field name="groups_id" eval="[(6,0,[ref('base.group_user'), ref('escola.group_escola_profesor')])]"/>
+            <field name="image_1920" type="base64" file="base/static/img/user_demo-image.jpg"/>
+    </record>
+
+   <record id="employee_professor" model="hr.employee">
+          <field name="name">Marc Professor</field>
+          <field name="user_id" ref="user_professor1"/>
+          <field name="work_location_id"/>
+          <field name="work_phone">+3281813700</field>
+          <field name="work_email">gilles@odoo.com</field>
+          <field name="image_1920" type="base64" file="hr/static/img/employee_qdp-image.png"/>
+          <field name="is_teacher">1</field>
+      </record> -->
+
+
+<record id="user_professor2" model="res.users">
+
+            <field name="name">teacher2</field>
+            <field name="login">professor2</field>
+            <field name="password">12345</field>
+            <field name="groups_id" eval="[(6,0,[ref('group_escola_profesor'), ref('base.group_user')])]"/>
+    </record>
+  <record id="employee_professor2" model="hr.employee">
+          <field name="name">Jennie Fletcher</field>
+          <field name="user_id" ref="user_professor2"/>
+          <field name="work_location_id"/>
+          <field name="work_phone">(157)-363-8229</field>
+          <field name="work_email">jennie.fletcher76@example.com</field>
+          <field name="image_1920" type="base64" file="hr/static/img/employee_chs-image.jpg"/>
+          <field name="is_teacher">1</field>
+      </record>
+
+
+
+
+
+ <!-- Demo classes 2-->
+          <record id="classe2" model="escola.class">
+            <field name="name">2r A</field>
+            <field name="grade">second</field>
+            <field name="date_begin">2020-08-01</field>
+            <field name="date_end">2021-09-01</field>
+            <field name="student_number">25</field>
+            <field name="description">2nd A. Primera classe del segon curs</field>
+            <field name="tutor_id" ref="employee_professor2"/>
+          </record>
+
+          <!-- Demo estudiants 2 -->
+          <record id="student5" model="escola.student">
+            <field name="name">Estudiant 5</field>
+            <field name="last_name">Estudiant 5</field>
+            <field name="id_number">987654321A</field>
+            <field name="birthdate">1999-06-16</field>
+            <field name="class_id" ref="classe2"/>
+          </record>
+
+          <record id="student6" model="escola.student">
+            <field name="name">Estudiant 6</field>
+            <field name="last_name">Estudiant 6</field>
+            <field name="id_number">987654321B</field>
+            <field name="birthdate">1999-09-25</field>
+            <field name="class_id" ref="classe2"/>
+          </record>
+
+          <record id="student7" model="escola.student">
+            <field name="name">Estudiant 7</field>
+            <field name="last_name">Estudiant 7</field>
+            <field name="id_number">987654321C</field>
+            <field name="birthdate">1999-02-19</field>
+            <field name="class_id" ref="classe2"/>
+          </record>
+
+          <record id="student8" model="escola.student">
+            <field name="name">Estudiant 8</field>
+            <field name="last_name">Estudiant 8</field>
+            <field name="id_number">987654321D</field>
+            <field name="birthdate">1999-03-28</field>
+            <field name="class_id" ref="classe2"/>
+          </record>
+
+<!-- demo esveniments 2-->
+          <record id="event6" model="escola.event">
+            <field name="type">absence</field>
+            <field name="class_id" ref="classe2"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor2"/>
+            <field name="description">No han vigunt a classe i els hi han vist pel carrer</field>
+          </record>
+
+           <record id="event7" model="escola.event">
+            <field name="type">absence</field>
+            <field name="class_id" ref="classe2"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor2"/>
+            <field name="description">No han vigunt a classe</field>
+          </record>
+
+ <record id="event8" model="escola.event">
+            <field name="type">delay</field>
+            <field name="class_id" ref="classe2"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor2"/>
+            <field name="description">Ha arribat 20 minuts tard</field>
+          </record>
+
+           <record id="event9" model="escola.event">
+            <field name="type">felicitacio</field>
+            <field name="class_id" ref="classe2"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor2"/>
+            <field name="description">Ha obtingut la millor nota de la escola</field>
+          </record>
+
+           <record id="event10" model="escola.event">
+            <field name="type">behavior</field>
+            <field name="class_id" ref="classe2"/>
+            <field name="datetime_begin" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="students_ids" eval="[(6,0,[ref('student1')])]"/>
+            <field name="teacher_id" ref="employee_professor2"/>
+            <field name="description">Ha insultat a tres companys de classe al migdia</field>
+          </record>         
+
+    </data>
+</odoo>

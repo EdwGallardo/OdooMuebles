@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gallardo__categoria_gallardo__categoria,gallardo__categoria.gallardo__categoria,model_gallardo__categoria_gallardo__categoria,base.group_user,1,1,1,1

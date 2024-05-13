@@ -1,0 +1,281 @@
+<odoo>
+  <data>
+    
+    <!-- Vista de lista para el modelo Hospital -->
+       <record model="ir.ui.view" id="hospital_hospital_tree_view">
+    <field name="name">hospital.hospital.tree</field>
+    <field name="model">hospital</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="direccion"/>
+            <field name="telefono"/>
+            <field name="email"/>
+        </tree>
+    </field>
+</record>
+
+        <!-- Vista de formulario para el modelo Hospital -->
+        <record model="ir.ui.view" id="hospital_hospital_form_view">
+    <field name="name">hospital.hospital.form</field>
+    <field name="model">hospital</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+            <separator string="Informacion del hospital" />
+                <group>
+                <group>
+                    <field name="name"/>
+                    <field name="direccion"/>
+                    </group>
+
+                    <group>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    </group>
+
+                    
+                </group>
+                <group>
+                 <group>
+                <field name="medicos_ids" widget="many2many_tags"/>
+                </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+        <!-- Vista de lista para el modelo Medico -->
+       <record model="ir.ui.view" id="hospital_medico_tree_view">
+    <field name="name">hospital.medico.tree</field>
+    <field name="model">hospital.medico</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="apellido"/>
+            <field name="dni"/>
+            <field name="especialidad"/>
+            <field name="telefono"/>
+            <field name="email"/>
+            <field name="hospital_id"/>
+        </tree>
+    </field>
+</record>
+
+        <!-- Vista de formulario para el modelo Medico -->
+        <record model="ir.ui.view" id="hospital_medico_form_view">
+    <field name="name">hospital.medico.form</field>
+    <field name="model">hospital.medico</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+            <separator string="Informacion del medico" />
+                <group>
+                <group>
+                    <field name="name"/>
+                    <field name="apellido"/>
+                    <field name="dni"/>
+                    </group>
+
+                <group>    
+                    <field name="especialidad"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    </group>
+                    
+                </group>
+
+                <group>
+                <group>
+                <field name="hospital_id"/>
+                </group>
+                </group>
+                 <group>
+                <field name="pacientes_ids"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+        <!-- Vista de lista para el modelo Paciente -->
+       <record model="ir.ui.view" id="hospital_paciente_tree_view">
+    <field name="name">hospital.paciente.tree</field>
+    <field name="model">hospital.paciente</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="cognom"/>
+            <field name="aniversari"/>
+            <field name="dni"/>
+            <field name="age"/>
+            <field name="telefono"/>
+            <field name="medico_id"/>
+        </tree>
+    </field>
+</record>
+
+       <!-- Vista de formulario para el modelo Paciente -->
+<record model="ir.ui.view" id="hospital_paciente_form_view">
+    <field name="name">hospital.paciente.form</field>
+    <field name="model">hospital.paciente</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+            <separator string="Informacion del paciente" />
+                <group>
+
+                    <group>
+                    <field name="name"/>
+                    <field name="cognom"/>
+                    <field name="aniversari"/>
+                    <field name="dni"/>                 
+                    </group>
+
+                    <group>                   
+                    <field name="age"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="direccion"/>
+                    </group>
+                    
+                </group>
+
+                <!-- <group>
+                    <field name="medico_id"/>
+                    </group> -->
+                <notebook>
+                    <page string="Ingresos">
+                        <field name="ingresados_ids">
+                            <tree>
+                                <field name="causa"/>
+                                <field name="fecha_ingreso"/>
+                                <field name="habitacion"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Medicos">
+                        <field name="medico_id">
+                            <tree>
+                                <field name="name"/>
+                                <field name="apellido"/>
+                                <field name="especialidad"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+     <!-- Vista de lista para el modelo Ingreso -->
+<record model="ir.ui.view" id="hospital_ingreso_tree_view">
+    <field name="name">hospital.ingreso.tree</field>
+    <field name="model">hospital.ingreso</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="fecha_ingreso"/>
+            <field name="fecha_alta"/>
+            <field name="habitacion"/>
+            <field name="causa"/>
+            <field name="paciente_id"/>
+            <field name="hospital_id"/>
+        </tree>
+    </field>
+</record>
+
+<!-- Vista de formulario para el modelo Ingreso -->
+<record model="ir.ui.view" id="hospital_ingreso_form_view">
+    <field name="name">hospital.ingreso.form</field>
+    <field name="model">hospital.ingreso</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+            <separator string="Informacion del ingreso" />
+                <group>
+                <group>
+                    <field name="fecha_ingreso"/>
+                    <field name="fecha_alta"/>
+                  </group>  
+                  <group>
+                    <field name="habitacion"/>
+                    <field name="causa"/>
+                    <field name="paciente_id"/>
+                   </group> 
+
+                </group>
+                <group>
+                <group>
+                <field name="hospital_id">
+                <tree>
+               <field name="name"/>
+              <field name="direccion"/>
+              <field name="telefono"/>
+            </tree>
+                </field>
+                </group>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+
+    <!-- actions opening views on models -->
+ <record model="ir.actions.act_window" id="hospital_paciente_action_window">
+      <field name="name">paciente</field>
+      <field name="res_model">hospital.paciente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_ingreso_action_window">
+      <field name="name">ingreso</field>
+      <field name="res_model">hospital.ingreso</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_medico_action_window">
+      <field name="name">medico</field>
+      <field name="res_model">hospital.medico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+<record model="ir.actions.act_window" id="hospital_hospital_action_window">
+      <field name="name">hospital</field>
+      <field name="res_model">hospital</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Hospital" id="hospital_menu_root"/>
+
+
+  <menuitem id="menu_pacientes" name="Pacientes" parent="hospital_menu_root" action="hospital_paciente_action_window"/>
+    <menuitem id="menu_pacientes_ingresos" name="Ingresos" parent="hospital_menu_root" action="hospital_ingreso_action_window"/>
+  <menuitem id="menu_medicos" name="Médicos" parent="hospital_menu_root" action="hospital_medico_action_window"/>
+  <menuitem id="menu_hospitales" name="Hospitales" parent="hospital_menu_root" action="hospital_hospital_action_window"/>
+
+
+    
+
+
+
+    <!-- menu categories -->
+<!-- 
+    <menuitem name="Menu 1" id="hospital.menu_1" parent="hospital.menu_root"/>
+    <menuitem name="Menu 2" id="hospital.menu_2" parent="hospital.menu_root"/> -->
+
+    <!-- actions -->
+
+    <!-- <menuitem name="List" id="hospital.menu_1_list" parent="hospital.menu_1"
+              action="hospital.action_window"/>
+    <menuitem name="Server to list" id="hospital" parent="hospital.menu_2"
+              action="hospital.action_server"/> -->
+
+  </data>
+</odoo>

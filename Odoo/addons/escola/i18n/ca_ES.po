@@ -1,0 +1,394 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* escola
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230203\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-30 09:20+0000\n"
+"PO-Revision-Date: 2023-04-30 13:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_event__type__absence
+msgid "Absencia"
+msgstr "Abscens"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__active
+msgid "Actiu"
+msgstr "Active"
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/xml/pricelist_report.xml:0
+#, python-format
+msgid "Add a quantity"
+msgstr ""
+
+#. module: escola
+#: model:ir.module.category,description:escola.escola_module_category_escola
+msgid "Ajuda a manegar la teva escola."
+msgstr "Helping hand"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__birthdate
+msgid "Aniversari"
+msgstr "Birthday"
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/js/product_pricelist_report.js:0
+#, python-format
+msgid ""
+"At most %d quantities can be displayed simultaneously. Remove a selected "
+"quantity to add others."
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__class_id
+#: model_terms:ir.ui.view,arch_db:escola.escola_event_search_view
+msgid "Class"
+msgstr "class"
+
+#. module: escola
+#: model_terms:ir.ui.view,arch_db:escola.escola_class_form
+msgid "Class denomination"
+msgstr "class"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_event__class_id
+msgid "Classe"
+msgstr "class"
+
+#. module: escola
+#: model:ir.ui.menu,name:escola.escola_classe
+#: model:ir.ui.menu,name:escola.escola_menu_class
+msgid "Classes"
+msgstr "class"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__last_name
+msgid "Cognom"
+msgstr "Lastname"
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_event__type__behavior
+msgid "Comportament"
+msgstr "Beheivour"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__create_uid
+#: model:ir.model.fields,field_description:escola.field_escola_event__create_uid
+#: model:ir.model.fields,field_description:escola.field_escola_student__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__create_date
+#: model:ir.model.fields,field_description:escola.field_escola_event__create_date
+#: model:ir.model.fields,field_description:escola.field_escola_student__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__id_number
+msgid "DNI/NIE"
+msgstr "Passport"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__date_end
+msgid "Data fi"
+msgstr "End"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_event__datetime_begin
+msgid "Data i hora"
+msgstr "Data and hour"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__date_begin
+msgid "Data inici"
+msgstr "Starts"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__name
+msgid "Denominacio"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__description
+#: model:ir.model.fields,field_description:escola.field_escola_event__description
+msgid "Descripcio"
+msgstr "Description"
+
+#. module: escola
+#: model:res.groups,name:escola.group_escola_director
+msgid "Director"
+msgstr "Manager"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__display_name
+#: model:ir.model.fields,field_description:escola.field_escola_event__display_name
+#: model:ir.model.fields,field_description:escola.field_escola_student__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/xml/pricelist_report.xml:0
+#, python-format
+msgid "Display Pricelist"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__age
+msgid "Edat"
+msgstr "Age"
+
+#. module: escola
+#: model:ir.model,name:escola.model_hr_employee
+msgid "Employee"
+msgstr "Empleat"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_hr_employee__is_teacher
+msgid "Es professor"
+msgstr "IS teacher"
+
+#. module: escola
+#: model:ir.module.category,name:escola.escola_module_category_escola
+#: model:ir.ui.menu,name:escola.escola_menu_root
+#: model_terms:ir.ui.view,arch_db:escola.view_employee_form
+msgid "Escola"
+msgstr "School"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__students_ids
+#: model:ir.model.fields,field_description:escola.field_escola_event__students_ids
+#: model:ir.ui.menu,name:escola.escola_menu_2
+#: model:ir.ui.menu,name:escola.escola_menu_students
+msgid "Estudiants"
+msgstr "Students"
+
+#. module: escola
+#: model_terms:ir.ui.view,arch_db:escola.escola_event_event_calendar
+msgid "Event Calendar"
+msgstr "Calendar"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__events_ids
+#: model:ir.ui.menu,name:escola.escola_menu_1
+msgid "Events"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_event__type__felicitacio
+msgid "Felicitacio"
+msgstr "Congratulations"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__grade
+msgid "Grade"
+msgstr "Grade"
+
+#. module: escola
+#: model_terms:ir.ui.view,arch_db:escola.escola_event_search_view
+msgid "Group by"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__id
+#: model:ir.model.fields,field_description:escola.field_escola_event__id
+#: model:ir.model.fields,field_description:escola.field_escola_student__id
+msgid "ID"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,help:escola.field_escola_student__active
+msgid "Is the student currently part of the class"
+msgstr ""
+
+#. module: escola
+#: model:res.groups,comment:escola.group_escola_director
+msgid "L usuari esta habilitat per controla dades de lescola"
+msgstr ""
+
+#. module: escola
+#: model:res.groups,comment:escola.group_escola_profesor
+msgid "L usuari podra crear events"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class____last_update
+#: model:ir.model.fields,field_description:escola.field_escola_event____last_update
+#: model:ir.model.fields,field_description:escola.field_escola_student____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__write_uid
+#: model:ir.model.fields,field_description:escola.field_escola_event__write_uid
+#: model:ir.model.fields,field_description:escola.field_escola_student__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__write_date
+#: model:ir.model.fields,field_description:escola.field_escola_event__write_date
+#: model:ir.model.fields,field_description:escola.field_escola_student__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_student__name
+msgid "Nom"
+msgstr "Name"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__student_number
+msgid "Nombre estudiants"
+msgstr "name students"
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/js/product_pricelist_report.js:0
+#, python-format
+msgid "Please enter a positive whole number"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/js/product_pricelist_report.js:0
+#, python-format
+msgid "Pricelist Report"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/xml/pricelist_report.xml:0
+#, python-format
+msgid "Pricelist:"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_class__grade__first
+msgid "Primer grau"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/js/product_pricelist_report.js:0
+#, python-format
+msgid "Print"
+msgstr ""
+
+#. module: escola
+#: model:res.groups,name:escola.group_escola_profesor
+msgid "Profesor"
+msgstr "Teacher"
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_event__teacher_id
+#: model_terms:ir.ui.view,arch_db:escola.view_employee_filter
+msgid "Professor"
+msgstr "Teacher"
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/xml/pricelist_report.xml:0
+#, python-format
+msgid "Quantities:"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/js/product_pricelist_report.js:0
+#, python-format
+msgid "Quantity already present (%d)."
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_class__grade__fourth
+msgid "Quart grau"
+msgstr ""
+
+#. module: escola
+#. openerp-web
+#: code:addons/escola/static/src/xml/pricelist_report.xml:0
+#, python-format
+msgid "Remove quantity"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_event__type__delay
+msgid "Retard"
+msgstr ""
+
+#. module: escola
+#: model:ir.model,name:escola.model_escola_class
+msgid "School class"
+msgstr ""
+
+#. module: escola
+#: model:ir.model,name:escola.model_escola_student
+msgid "School student"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_class__grade__second
+msgid "Segon grau"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.constraint,message:escola.constraint_escola_student_id_number_uniq
+msgid "Student ID already exist !"
+msgstr ""
+
+#. module: escola
+#: model:ir.actions.act_window,name:escola.escola_student_action_window
+msgid "Student window"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields.selection,name:escola.selection__escola_class__grade__third
+msgid "Tercer grau"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_event__type
+msgid "Tipus"
+msgstr ""
+
+#. module: escola
+#: model:ir.model.fields,field_description:escola.field_escola_class__tutor_id
+msgid "Tutor"
+msgstr ""
+
+#. module: escola
+#: model:ir.actions.act_window,name:escola.escola_class_action_window
+msgid "class window"
+msgstr ""
+
+#. module: escola
+#: model:ir.model,name:escola.model_escola_event
+msgid "escola.event"
+msgstr ""
+
+#. module: escola
+#: model:ir.actions.act_window,name:escola.escola_event_action_window
+msgid "event window"
+msgstr ""
+
+#. module: escola
+#: model_terms:ir.ui.view,arch_db:escola.escola_event_search_view
+msgid "type"
+msgstr ""

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<odoo>
+<data noupdate="0">
+
+<record id="escola_module_category_escola" model="ir.module.category">
+        <field name="name">Escola</field>
+        <field name="description">Ajuda a manegar la teva escola.</field>
+        <field name="sequence">107</field>
+    </record>
+
+    <record id="group_escola_profesor" model="res.groups">
+        <field name="name">Profesor</field>
+        <field name="category_id" ref="escola_module_category_escola"/>
+        <!-- <field name="implied_ids" eval="[(6, 0, [ref('base.group_private_addresses'), ref('base.group_user')])]"/> parece ser que no es necesaria esta linea-->
+        <field name="comment">L usuari podra crear events</field>
+    </record>
+
+    <record id="group_escola_director" model="res.groups">
+        <field name="name">Director</field>
+        <field name="category_id" ref="escola_module_category_escola"/>
+        <field name="comment">L usuari esta habilitat per controla dades de lescola</field>
+        <field name="implied_ids" eval="[(4, ref('group_escola_profesor')),(4, ref('hr.group_hr_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]" />
+    </record>
+</data>
+</odoo>

@@ -1,0 +1,228 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <!-- VISTAS DE ESTUDIANTE -->
+     <record model="ir.ui.view" id="escola_student_tree">
+      <field name="name">student tree</field>
+      <field name="model">escola.student</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="last_name"/>
+          <field name="class_id"/>
+        </tree>
+      </field>
+     </record>
+    
+
+      <record model="ir.ui.view" id="escola_student_form">
+      <field name="name">student form</field>
+      <field name="model">escola.student</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+        <group>
+          <group>
+          <field name="name"/>
+          <field name="last_name"/>
+          <field name="id_number"/>
+          </group>
+          <group>
+          <field name="birthdate"/>
+          <field name="age"/>
+          <field name="class_id"/>
+          </group>
+        </group>
+        <group>
+        <field name="events_ids"/>
+        </group>
+        </sheet>
+          
+        </form>
+      </field>
+     </record>
+
+
+    <!-- actions opening views on models ESTUDIANTE -->
+
+    <record model="ir.actions.act_window" id="escola_student_action_window">
+      <field name="name">Student window</field>
+      <field name="res_model">escola.student</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+ <!-- VISTAS DE CLASSE -->
+     <record model="ir.ui.view" id="escola_class_tree">
+      <field name="name">class tree</field>
+      <field name="model">escola.class</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="grade"/>
+          <field name="tutor_id"/>
+        </tree>
+      </field>
+     </record>
+    
+
+      <record model="ir.ui.view" id="escola_class_form">
+      <field name="name">class form</field>
+      <field name="model">escola.class</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+        <div class="oe_title">
+                            <h1 >
+                                <field name="name" placeholder="Class denomination" required="True"/>
+                            </h1>
+        </div>                    
+        <group>
+          <group>
+          <field name="grade"/>
+          <field name="date_begin"/>
+          <field name="date_end"/>
+          </group>
+          <group>
+          <field name="tutor_id"/>
+          <field name="student_number"/>
+          </group>
+        </group>
+        <group>
+        <field name="students_ids"/>
+        </group>
+        <group>
+        <field name="description"/>
+        </group>
+        </sheet>
+          
+        </form>
+      </field>
+     </record>
+
+
+    <!-- actions opening views on models CLASSE-->
+
+    <record model="ir.actions.act_window" id="escola_class_action_window">
+      <field name="name">class window</field>
+      <field name="res_model">escola.class</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+<!-- VISTAS DE EVENTS -->
+     <record model="ir.ui.view" id="escola_event_tree">
+      <field name="name">event tree</field>
+      <field name="model">escola.event</field>
+      <field name="arch" type="xml">
+        <tree decoration-danger="type=='behavior'" decoration-success="type=='felicitation'" decoration-bf="type=='absence'">
+          <field name="class_id"/>
+          <field name="datetime_begin"/>
+          <field name="type"/>
+        </tree>
+      </field>
+     </record>
+    
+
+      <record model="ir.ui.view" id="escola_event_form">
+      <field name="name">event form</field>
+      <field name="model">escola.event</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>             
+        <group>
+
+          <group>
+          <field name="type"/>
+          <field name="datetime_begin"/>
+          </group>
+
+          <group>
+          <field name="class_id"/>
+          <field name="teacher_id"/>
+          </group>
+
+        </group>
+
+        <group>
+        <field name="description"/>
+        </group>
+
+        <group>
+        <field name="students_ids"/>
+        </group>
+        </sheet>
+          
+        </form>
+      </field>
+     </record>
+
+
+<!-- Search view EVENTS-->
+<record id ="escola_event_search_view" model="ir.ui.view">
+      <field name="model">escola.event</field>
+      <field name="arch" type="xml">
+        <search>
+        <field name="datetime_begin"/> 
+        <field name="class_id"/>
+        <field name="type" widget="selection"/>
+        <group string="Group by">
+        <filter name="group_by_class" string="Class" context="{'grop_by': 'class_id'}"/>
+        <filter name="group_by_type" string="type" context="{'grop_by': 'type'}"/>
+        </group>
+        </search>
+      </field>
+</record>
+
+<!--Calendar views EVENTS -->
+
+<record id ="escola_event_event_calendar" model="ir.ui.view">
+      <field name="name">Event Calendar</field>
+      <field name="model">escola.event</field>
+      <field name="arch" type="xml">
+        <calendar string="Event Calendar" date_start="datetime_begin" color="type" mode="week">
+        <field name="class_id"/> 
+        <field name="type"/>
+        <field name="description"/>
+        </calendar>
+      </field>
+</record>
+
+
+
+    <!-- actions opening views on models EVENTS-->
+    <record model="ir.actions.act_window" id="escola_event_action_window">
+      <field name="name">event window</field>
+      <field name="res_model">escola.event</field>
+      <field name="view_mode">tree,form,calendar</field>
+      <field name="context">{'search_default_group_by_class': True, 'search_default_group_by_type': True}</field> <!-- busquedas predeterminadas-->
+    </record>
+
+
+
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Escola" id="escola_menu_root" web_icon="escola,static/description/icon.png"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Events" id="escola_menu_1" parent="escola_menu_root" action="escola_event_action_window"/>
+    <menuitem name="Estudiants" id="escola_menu_2" parent="escola_menu_root"/>
+    <menuitem name="Classes" id="escola_classe" parent="escola_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Estudiants" id="escola_menu_students" parent="escola_menu_2"
+              action="escola_student_action_window"/>
+
+    <menuitem name="Classes" id="escola_menu_class" parent="escola_classe"
+              action="escola_class_action_window"/>
+    
+
+  </data>
+</odoo>
